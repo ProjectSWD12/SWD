@@ -12,6 +12,12 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {FirebaseAuth.instance.signOut();},
           child: const Text('Выйти')),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(label: 'Calendar', icon: Icon(Icons.calendar_today)),
+          BottomNavigationBarItem(label: 'Profile', icon: Icon(Icons.person)),
+        ],
+      ),
     );
   }
 }

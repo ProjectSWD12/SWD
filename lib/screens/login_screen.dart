@@ -61,82 +61,76 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Войдите в аккаунт',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 22,
-                        color: Color(0xff333333),
-                      ),
-                    ),
-                    SizedBox(height: 16),
-                    SizedBox(
-                      height: 48,
-                      child: TextField(
-                        controller: emailController,
-                        style: TextStyle(fontSize: 17),
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                          hintText: 'Email',
-                          hintStyle: TextStyle(color: Color(0xff5A5A5A)),
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    SizedBox(
-                      height: 48,
-                      child: TextField(
-                        controller: passwordController,
-                        obscureText: true,
-                        style: TextStyle(fontSize: 17),
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                          hintText: 'Password',
-                          hintStyle: TextStyle(color: Color(0xff5A5A5A)),
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    SizedBox(
-                      width: double.infinity,
-                      child: FilledButton(
-                        onPressed: _signIn,
-                        style: FilledButton.styleFrom(
-                          backgroundColor: Color(0xff005BFF),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12)
-                          )
-                        ),
-                        child: Text(
-                          'Войти',
-                          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                    ),
-                  ],
+            Spacer(),
+            Text(
+              'Войдите в аккаунт',
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 22,
+                color: Color(0xff333333),
+              ),
+            ),
+            SizedBox(height: 16),
+            SizedBox(
+              height: 48,
+              child: TextField(
+                controller: emailController,
+                style: TextStyle(fontSize: 17),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                  hintText: 'Email',
+                  hintStyle: TextStyle(color: Color(0xff5A5A5A)),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
             ),
+            SizedBox(height: 8),
+            SizedBox(
+              height: 48,
+              child: TextField(
+                controller: passwordController,
+                obscureText: true,
+                style: TextStyle(fontSize: 17),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                  hintText: 'Password',
+                  hintStyle: TextStyle(color: Color(0xff5A5A5A)),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 8),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: _signIn,
+                style: FilledButton.styleFrom(
+                    backgroundColor: Color(0xff005BFF),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)
+                    )
+                ),
+                child: Text(
+                  'Войти',
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                ),
+              ),
+            ),
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.only(bottom: 24),
+              padding: EdgeInsets.only(bottom: 24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -145,11 +139,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => RegistrationScreen()));
+                        MaterialPageRoute(builder: (context) => RegistrationScreen())
+                      );
                     },
-                    child: Text('Регистрация', style: TextStyle(color: Color(0xff005BFF))),
-                  ),
+                    child: Text(
+                      'Регистрация',
+                      style: TextStyle(
+                        color: Color(0xff005BFF),
+                      ),
+                    )
+                  )
                 ],
               ),
             ),

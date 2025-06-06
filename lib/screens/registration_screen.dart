@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:tour_app/screens/login_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -62,6 +63,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Spacer(),
             Text(
               'Создайте аккаунт',
               style: TextStyle(
@@ -124,6 +126,30 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   'Регистрация',
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                 ),
+              ),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(bottom: 24),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Уже есть аккаунт?'),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen())
+                      );
+                    },
+                    child: Text(
+                      'Вход',
+                      style: TextStyle(
+                        color: Color(0xff005BFF),
+                      ),
+                    )
+                  )
+                ],
               ),
             ),
           ],
